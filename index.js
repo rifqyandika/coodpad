@@ -4,9 +4,9 @@ const app = express();
 const morgan = require("morgan");
 const cors = require("cors");
 
-const connectDB = require('./config/database')
+// const connectDB = require('./config/database')
 
-connectDB()
+// connectDB()
 const PORT = process.env.PORT || 5000
 
 app.use(bodyParser.json());
@@ -21,6 +21,7 @@ app.use(cors());
 
 // router
 app.use(require('./routes'))
+app.use('/v1', require('./routes/receipe'))
 
 
 
